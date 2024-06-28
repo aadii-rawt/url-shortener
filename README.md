@@ -9,14 +9,15 @@
 #### React JS [User Interface, Application Logic]
 - Tailwind CSS
 - React JS
+- Firebase
 
 ### Live site
-https://adityarawat4-batchsystem.netlify.app/
+https://url-shortener-ar.netlify.app/
 
 ### To clone this app
 Type this into your terminal
 
-    git clone https://github.com/adityarawat4/BatchSystem-assignment.git
+    git clone https://github.com/adityarawat4/u-shortener.git
 
 ### To run this app in dev mode
   
