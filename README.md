@@ -1,8 +1,6 @@
 # Batch System Assignment
 
 ## Screenshots
-![Vite + React (1)](https://github.com/adityarawat4/BatchSystem-assignment/assets/99741576/f70f6b6d-3921-476d-9316-f17137e7cba1)
-!![ass](https://github.com/adityarawat4/BatchSystem-assignment/assets/99741576/dfea880a-cfa1-4dbe-9d15-c89ffe2f79b5)
 
 ## Technologies Used
 
