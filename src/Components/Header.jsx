@@ -7,13 +7,13 @@ import { signOut } from 'firebase/auth'
 function Header() {
     const [user] = useAuthState(auth)
     const navigate = useNavigate()
-
+    // user log out 
     function handleLogout() {
         signOut(auth).then(() => {
             // Sign-out successful.
             navigate('/login')
         }).catch((error) => {
-            // An error happened.
+            console.log(error);
         });
     }
     return (

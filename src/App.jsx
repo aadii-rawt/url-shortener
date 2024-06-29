@@ -2,21 +2,16 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom"
 import DataProvider from "./Context/DataContext"
 import Home from "./Pages/Home"
 import Layout from "./Layout/Layout"
-import ShortURL from "./Pages/ShortURL"
 import MyLinks from "./Pages/MyLinks"
 import AuthForm from "./Pages/Auth"
 
 const router = createBrowserRouter([
   {
-    path : '',
     element: <Layout />,
     children: [
       {
-      path: '',
+      path: '/',
       element: <Home />
-    },{
-      path: '/shorturl/:id',
-      element : <ShortURL />
     },{
       path: '/mylinks',
       element: <MyLinks />

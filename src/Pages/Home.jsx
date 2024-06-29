@@ -1,6 +1,5 @@
 // src/Hom.js
-import React, { useEffect, useState } from 'react';
-import DownloadBtn from '../Components/DownloadBtn';
+import React, {useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { urlContext } from '../Context/DataContext';
 import URLModel from '../Components/URLModel';
@@ -9,8 +8,7 @@ import { auth } from '../firebase';
 
 const Home = () => {
 
-  const { originalUrl, setOriginalUrl, shortUrl, setShortUrl, title, setTitle, QR, setQR, Data, setData } = urlContext()
-  const [titleInput, setTitleInput] = useState(false)
+  const {Data, setData } = urlContext()
   const navigate = useNavigate()
   const [urlModel,seturlModel] = useState(false)
   const [user] = useAuthState(auth)
@@ -24,6 +22,7 @@ const Home = () => {
       [name]: value,
     }))
   }
+  // generate short url
    async function generateShortUrl(e){
      e.preventDefault()
     if(Data.originalUrl){
@@ -40,9 +39,6 @@ const Home = () => {
     }
   };
 
-  function handleCopy() {
-    navigator.clipboard.writeText(shortUrl)
-  }
   return (
     <div className="min-h-[calc(100vh-48px)] relative flex items-center flex-col gap-y-10 justify-center p-4">
       <h1 className='text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl  font-bold  '>The only URL Shortner <br />
@@ -56,7 +52,6 @@ const Home = () => {
           onChange={handleData}
           placeholder="Enter URL"
           className="p-2 w-full sm:w-2/4 border-2 border-gray-300 bg-transparent outline-none rounded-md"
-          onClick={() => setTitleInput(true)}
         />
         <button
           onClick={generateShortUrl}

@@ -10,6 +10,7 @@ import {saveAs} from 'file-saver'
 
 function Urls({ url }) {
   const [user] = useAuthState(auth)
+  
   // format date and time 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -23,21 +24,13 @@ function Urls({ url }) {
 
     return `${day}/${month}/${year} ${hours}:${minutes}`;
   };
-
   // download qr code url
   function downloadQRCode() {
     const imgUrl = url?.qrcode;
     const fileName = url?.title;
     saveAs(imgUrl, fileName);
   }
-
-  //   const cityRef = doc(db, 'cities', 'BJ');
-
-  // // Remove the 'capital' field from the document
-  // await updateDoc(cityRef, {
-  //     capital: deleteField()
-  // });
-
+  // delete the url
   async function handleDeleteURL() {
     await deleteDoc(doc(db,`users/${user?.uid}/urls/${url.id}`));
   }

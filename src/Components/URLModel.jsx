@@ -14,6 +14,7 @@ function URLModel({ seturlModel }) {
   const { Data, setData } = urlContext()
   const [user] = useAuthState(auth)
 
+  // add url to database
   async function handleURL() {
     await addDoc(collection(db, `users/${user?.uid}/urls`), {
       ...Data,
@@ -21,6 +22,7 @@ function URLModel({ seturlModel }) {
     })
     navigate('/mylinks')
   }
+
   function handleData(e) {
     const { name, value } = e.target
     setData((prev) => ({
@@ -28,7 +30,7 @@ function URLModel({ seturlModel }) {
       [name]: value,
     }))
   }
-
+  // cancel to save to url
   function handleCancle() {
     setData({
       title: '',

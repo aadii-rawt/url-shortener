@@ -27,6 +27,7 @@ function MyLinks() {
         })
         navigate('/')
     }
+    // fetch created links
     useEffect(() => {
         const notesQuery = query(
             collection(db, `users/${user?.uid}/urls`),
@@ -45,7 +46,7 @@ function MyLinks() {
             setIsLoading(false);
         });
         return () => unsubscribe();
-    }, [user,db])
+    }, [user, db])
 
     return (
         <div className="min-h-[calc(100vh-48px)] bg-slate-900 text-white p-4">
@@ -66,7 +67,7 @@ function MyLinks() {
                         mylinks.length > 0 ?
                             mylinks.filter((item) => item.title.toLowerCase().includes(filter.toLowerCase())).map((url, index) => {
                                 return <Urls key={index} url={url} />
-                            }) :
+                        }) :
                             <h1>No Links Created yet</h1>
                     }
                 </div>
