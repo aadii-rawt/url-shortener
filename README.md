@@ -1,4 +1,4 @@
-# Batch System Assignment
+# URL Shortener
 
 ## Screenshots
 <img width="960" alt="image" src="https://github.com/adityarawat4/url-shortener/assets/99741576/8cc6b4df-ff1a-412f-84a4-549701bedc33">
