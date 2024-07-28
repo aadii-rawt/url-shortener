@@ -25,7 +25,7 @@ const Home = () => {
         const errorMessage = error.message;
         console.log(errorMessage);
       }
-    }
+    autoLogin() 
   },[])
 
   function handleData(e) {
