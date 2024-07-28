@@ -1,10 +1,11 @@
 // src/Hom.js
-import React, {useState } from 'react';
+import React, {useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { urlContext } from '../Context/DataContext';
 import URLModel from '../Components/URLModel';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../firebase';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 const Home = () => {
 
@@ -14,6 +15,18 @@ const Home = () => {
   const [user] = useAuthState(auth)
 
   const [btndisable,setBtnDisable] = useState(false)
+
+  useEffect(() => {
+    async function autoLogin(){
+      try {
+        const res = await signInWithEmailAndPassword(auth, "user@test.com", "12345678")
+        navigate('/')
+      } catch (error) {
+        const errorMessage = error.message;
+        console.log(errorMessage);
+      }
+    }
+  },[])
 
   function handleData(e) {
     const { name, value } = e.target

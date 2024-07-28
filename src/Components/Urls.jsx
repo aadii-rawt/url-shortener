@@ -41,7 +41,7 @@ function Urls({ url }) {
         <img src={url.qrcode} alt="" className='w-20 sm:w-24' />
         <div>
           <h2 className='font-bold text-base sm:text-lg'>{url?.title}</h2>
-          <a href={url.shortUrl} target='_blank' className='font-semibold text-blue-500 text-sm sm:text-base flex items-center gap-1'> <FaLink color='gray' size={14} />{url?.shortUrl}</a>
+          <a href={url.shortUrl} target='_blank' className='font-semibold text-blue-500 text-sm sm:text-base flex items-center gap-1 text-ellipsis overflow-hidden'> <FaLink color='gray' size={14} />{url?.shortUrl}</a>
           <a href={url.originalUrl} target='_blank' className='text-xs sm:text-sm'>{url?.originalUrl}</a>
           <p className='text-xs my-0.5'>{formatDate(url.timestamp)}</p>
         </div>
