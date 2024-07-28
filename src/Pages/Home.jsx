@@ -22,8 +22,7 @@ const Home = () => {
         const res = await signInWithEmailAndPassword(auth, "test@test.com", "12345678")
         navigate('/')
       } catch (error) {
-        const errorMessage = error.message;
-        console.log(errorMessage);
+        console.log(error.message);
       }
     }
     autoLogin()
