@@ -19,13 +19,15 @@ const Home = () => {
   useEffect(() => {
     async function autoLogin(){
       try {
-        const res = await signInWithEmailAndPassword(auth, "user@test.com", "12345678")
+        const res = await signInWithEmailAndPassword(auth, "test@test.com", "12345678")
         navigate('/')
       } catch (error) {
         const errorMessage = error.message;
         console.log(errorMessage);
       }
     }
+
+    autoLogin()
   },[])
 
   function handleData(e) {
